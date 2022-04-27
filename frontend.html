@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           #main{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,auto);
+        gap: 20px;
+       
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Frontend</h1>
+    <div id="main"></div>
+</body>
+</html>
+<script>
+    var investorArr= JSON.parse(localStorage.getItem("investorsData"))
+
+    investorArr.forEach(function(elem){
+        var smallbox=document.createElement("div")
+        
+        var img=document.createElement("img")
+        img.setAttribute("src",elem.investorimg)
+        img.style.width="100%"
+
+        var name=document.createElement("h2")
+        name.innerText=elem.investorname
+
+       var post=document.createElement("p")
+       post.innerText=elem.investorRole
+
+        var company=document.createElement("img")
+        company.setAttribute("src",elem.investorlogo)
+        company.style.height="30px"
+
+        smallbox.append(img,name,post,company)
+        document.querySelector("#main").append(smallbox)
+    })
+
+</script>

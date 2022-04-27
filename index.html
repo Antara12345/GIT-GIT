@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form id="investorform">
+       <input id="imglink" type="text" placeholder="img url">
+       <input id="name" type="text" placeholder="investor name">
+       <inpu id="role" type="text" placeholder="investor role">
+       <input id="logo" type="text" placeholder="com logo">
+       <input type="submit"/>
+   </form>
+</body>
+</html>
+<script>
+   document.querySelector("#investor form").addEventListener("submit",myFunction)
+ 
+   var investorArr=[]
+
+   function myFunction()
+   {
+       event.preventDefault();
+       var investorObj=
+       {
+         investorImg:document.querySelector("#imglink").value,
+         investorname:document.querySelector("#name").value,
+         investorRole: investorform.role.value,
+         investorLogo: investorform.logo.value,
+       }
+       investorArr.push(investorObj)
+   }
+</script>
